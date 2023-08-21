@@ -25,8 +25,12 @@ public class Producto {
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
-    public Producto() {
-    }
+    @ManyToOne
+    @JoinColumn(name="id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
+
+
+
 
     public Integer getIdProducto() {
         return idProducto;
@@ -75,4 +79,7 @@ public class Producto {
     public void setCantidadStock(Integer cantidadStock) {
         this.cantidadStock = cantidadStock;
     }
+
+
+
 }
